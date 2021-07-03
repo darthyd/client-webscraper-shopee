@@ -17,6 +17,7 @@ function Load(){
   const [animationState, setAnimationState] = useState({
     isStopped: true, isPaused: false
   });
+  setAnimationState({ isStopped: false})
 
   return(
     <Animation>
