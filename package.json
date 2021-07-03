@@ -15,11 +15,10 @@
     "styled-components": "^5.3.0"
   },
   "scripts": {
-    "start-client": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start": "npm run build && (cd server && npm start)"
+    "start": "react-scripts start"
   },
   "eslintConfig": {
     "extends": "react-app"
