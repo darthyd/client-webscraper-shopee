@@ -13,12 +13,12 @@ state = {
   load: false,
   error: false,
   keySearch: '',
-  get: (key, ord='asc', page='0', sortBy='price', from='', pages='5') => {
+  get: (key, ord='asc', page='0', sortBy='price', from='') => {
     let err = 0;
     this.setState({load: true})
     this.setState({ keySearch: key });
     try {
-      axios.get(`https://server-webscrap-shopee.herokuapp.com/api/search/${key}&order=${ord}&sortBy=${sortBy}&locations=${from}/${pages}`).then((response) => {
+      axios.get(`${process.env.REACT_APP_ENDPOINT}/${key}&order=${ord}&sortBy=${sortBy}&locations=${from}`).then((response) => {
         this.setState({ search: response.data });  
       this.setState({load: false})
     });
