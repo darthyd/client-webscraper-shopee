@@ -18,7 +18,7 @@ state = {
     this.setState({load: true})
     this.setState({ keySearch: key });
     try {
-      axios.get(`${process.env.REACT_APP_ENDPOINT}/${key}&order=${ord}&sortBy=${sortBy}&locations=${from}`).then((response) => {
+      axios.get(`${process.env.REACT_APP_ENDPOINT}/api/search/${key}&order=${ord}&sortBy=${sortBy}&locations=${from}`).then((response) => {
         this.setState({ search: response.data });  
       this.setState({load: false})
     });
@@ -48,7 +48,7 @@ render() {
       <Search keySearch={this.state.keySearch} newSearch={this.state.get}/>
       <ProdSection>
         {search.map((search) => (
-          <Card produto={search} />
+          <Card key={search.id} produto={search} />
         ))}
       </ProdSection>
     </Global>

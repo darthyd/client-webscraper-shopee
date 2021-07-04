@@ -14,11 +14,10 @@ const defaultOptions = {
 };
 
 function Load(){
-  const [animationState, setAnimationState] = useState({
+  const [animationState] = useState({
     isStopped: true, isPaused: false
   });
-  setAnimationState({ isStopped: false})
-
+  
   return(
     <Animation>
       <Lottie 
